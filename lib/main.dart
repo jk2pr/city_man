@@ -1,3 +1,5 @@
+import 'package:city_man/theme.dart';
+import 'package:city_man/util.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,12 +9,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    TextTheme textTheme = createTextTheme(context, "Roboto", "Roboto");
+    final brightness = View.of(context).platformDispatcher.platformBrightness;
+    MaterialTheme theme = MaterialTheme(textTheme);
+
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: brightness == Brightness.light ? theme.light() : theme.dark(),
       home: MyHomePage(title: 'Flutter Demo Home Page', key: Key("Test")),
     );
   }
@@ -41,6 +44,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (int) {},
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.safety_check), label: "Settings")
+        ],
       ),
       body: Center(
         child: Column(
