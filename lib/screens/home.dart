@@ -10,9 +10,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageWrapper.container(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: const Text('Home Screen'),
       ),
-      bottomAppBar: BottomNavigationBar(items: [
+      bottomAppBar: BottomNavigationBar(items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
         BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Setting"),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile")

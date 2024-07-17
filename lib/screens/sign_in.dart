@@ -23,7 +23,7 @@ class _LoginState extends State<Login> {
     return PageWrapper.container(
         appBar: AppBar(title: const Text('Home Screen')),
         child: Stack(children: [
-          Center(child: CircularProgressIndicator()),
+          const Center(child: CircularProgressIndicator()),
           Center(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -31,42 +31,42 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  TitleWidget(),
-                  SizedBox(height: 24.0),
+                  const TitleWidget(),
+                  const SizedBox(height: 24.0),
                   TextField(
                     onChanged: (value) {
                       email = value;
                     },
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Email',
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   TextField(
                     onChanged: (value) {
                       password = value;
                     },
                     obscureText: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Password',
                       border: OutlineInputBorder(),
                     ),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   ElevatedButton(
                     onPressed: () {},
-                    child: Text('Login'),
+                    child: const Text('Login'),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   TextButton(
                     onPressed: () {},
-                    child: Text('Register'),
+                    child: const Text('Register'),
                   ),
-                  SizedBox(height: 16.0),
+                  const SizedBox(height: 16.0),
                   TextButton(
                     onPressed: () {},
-                    child: Text('Forgot Password'),
+                    child: const Text('Forgot Password'),
                   ),
                 ],
               ),

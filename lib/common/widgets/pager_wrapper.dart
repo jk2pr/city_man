@@ -4,13 +4,13 @@ import '../../theme.dart';
 import '../../util.dart';
 
 class PageWrapper extends StatelessWidget {
-  final bottomAppBar;
-  final isColumnCentered;
-  final appBar;
-  final child;
+  final Widget? bottomAppBar ;
+  final bool isColumnCentered ;
+  final AppBar appBar;
+  final Widget child;
 
-  PageWrapper.container(
-      {this.bottomAppBar, this.isColumnCentered, this.appBar, this.child});
+  const PageWrapper.container(
+      {super.key,  this.bottomAppBar, this.isColumnCentered = false, required this.appBar, required this.child});
 
   @override
   Widget build(BuildContext context) {
